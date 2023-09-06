@@ -1,0 +1,152 @@
+// ## Colors
+// ### Primary
+
+$linearGradient : hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+// (active input border)
+$Red : hsl(0, 100%, 66%);
+// (input errors)
+
+// ### Neutral
+
+$White: hsl(0, 0%, 100%);
+$Light-grayish-violet: hsl(270, 3%, 87%);
+$Dark-grayish-violet: hsl(279, 6%, 55%);
+$Very-dark-violet: hsl(278, 68%, 11%);
+$font-weight-500 : 500;
+$font-family: 'Space Grotesk', sans-serif;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+@mixin flex($justify-content) {
+    display: flex;
+    justify-content: $justify-content;
+}
+
+img {
+    max-width: 100%;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+    height: 100vh;
+    font-size: 1.125rem;
+    font-family: $font-family;
+    background: url(images/bg-main-desktop.png) no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.credit-card-front {
+    // border: 2px solid red;
+    width: 33.5%;
+    height: 250px;
+    background: url(images/bg-card-front.png) no-repeat;
+    display: block;
+    padding: 1.5rem 2rem;
+    margin: 4% 0 0 5%;
+}
+
+.credit-card-front-container {
+    // border: 2px solid honeydew;
+    color: $White;
+    height: 95%;
+    position: relative;
+
+    p {
+        font-size: 1.75rem;
+        position: absolute;
+        bottom: 0.5rem;
+        letter-spacing: 3px;
+    }
+}
+
+.card-details {
+    // border: 2px solid khaki;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    @include flex(space-between);
+}
+
+.credit-card-back {
+    // border: 2px solid red;
+    width: 33.5%;
+    height: 250px;
+    background: url(images/bg-card-back.png) no-repeat;
+    margin: 1.5em 11%;
+
+    p {
+        position: relative;
+        top: 42.5%;
+        left: 80%;
+        color: $White;
+    }
+}
+
+.hero-container {
+    // border: 2px solid fuchsia;
+    width: 27.5%;
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translateX(-25%) translateY(-50%);
+}
+
+input {
+    border: 1px solid $Light-grayish-violet;
+    // border: none;
+    outline: none;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 10px;
+    font-size: 1.125rem;
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    display: none;
+}
+
+.flex {
+    // border: 2px solid brown;
+    @include flex(center);
+}
+
+.expDate {
+    // border: 2px solid aqua;
+    width: 70%;
+    input {
+        margin-right: 0.5rem;
+        width: 40%;
+    }
+}
+
+button {
+    border: none;
+    outline: none;
+    margin-top: 1.5rem;
+    background-color: $Very-dark-violet;
+    color: $White;
+    width: 100%;
+    font-family: inherit;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: inherit;
+    cursor: pointer;
+}

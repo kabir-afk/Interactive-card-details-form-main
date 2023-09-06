@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+  height: 100vh;
+  font-size: 1.125rem;
+  font-family: "Space Grotesk", sans-serif;
+  background: url(images/bg-main-desktop.png) no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.credit-card-front {
+  width: 33.5%;
+  height: 250px;
+  background: url(images/bg-card-front.png) no-repeat;
+  display: block;
+  padding: 1.5rem 2rem;
+  margin: 4% 0 0 5%;
+}
+
+.credit-card-front-container {
+  color: hsl(0, 0%, 100%);
+  height: 95%;
+  position: relative;
+}
+.credit-card-front-container p {
+  font-size: 1.75rem;
+  position: absolute;
+  bottom: 0.5rem;
+  letter-spacing: 3px;
+}
+
+.card-details {
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.credit-card-back {
+  width: 33.5%;
+  height: 250px;
+  background: url(images/bg-card-back.png) no-repeat;
+  margin: 1.5em 11%;
+}
+.credit-card-back p {
+  position: relative;
+  top: 42.5%;
+  left: 80%;
+  color: hsl(0, 0%, 100%);
+}
+
+.hero-container {
+  width: 27.5%;
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  transform: translateX(-25%) translateY(-50%);
+}
+
+input {
+  border: 1px solid hsl(270, 3%, 87%);
+  outline: none;
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 10px;
+  font-size: 1.125rem;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.expDate {
+  width: 70%;
+}
+.expDate input {
+  margin-right: 0.5rem;
+  width: 40%;
+}
+
+button {
+  border: none;
+  outline: none;
+  margin-top: 1.5rem;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  font-family: inherit;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: inherit;
+  cursor: pointer;
+}/*# sourceMappingURL=styles.css.map */
