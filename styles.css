@@ -88,6 +88,10 @@ input {
   color: inherit;
   cursor: pointer;
 }
+input:focus {
+  background: linear-gradient(white, white) padding-box, linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) padding-box border-box;
+  border: 1px solid transparent;
+}
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {

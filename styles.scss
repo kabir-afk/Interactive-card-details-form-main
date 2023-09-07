@@ -1,7 +1,7 @@
 // ## Colors
 // ### Primary
 
-$linearGradient : hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+$linearGradient : linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) padding-box;
 // (active input border)
 $Red : hsl(0, 100%, 66%);
 // (input errors)
@@ -107,7 +107,6 @@ body {
 
 input {
     border: 1px solid $Light-grayish-violet;
-    // border: none;
     outline: none;
     width: 100%;
     padding: 0.5em;
@@ -116,6 +115,11 @@ input {
     font-family: inherit;
     color: inherit;
     cursor: pointer;
+
+    &:focus {
+        background: linear-gradient(white,white) padding-box,$linearGradient border-box;
+        border: 1px solid transparent;
+    }
 }
 
 input[type="number"]::-webkit-inner-spin-button,
