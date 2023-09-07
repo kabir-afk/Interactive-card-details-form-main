@@ -100,14 +100,17 @@ input[type=number]::-webkit-outer-spin-button {
 
 .flex {
   display: flex;
-  justify-content: center;
 }
 
 .expDate {
-  width: 70%;
+  width: 60%;
 }
 .expDate input {
   margin-right: 0.5rem;
+  width: 40%;
+}
+
+.CVC {
   width: 40%;
 }
 
