@@ -51,4 +51,4 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@solitary_coder](https://www.frontendmentor.io/profile/solitary_coder)
+- Frontend Mentor - [@solitary_coder](https://www.frontendmentor.io/profile/kabir-afk)
