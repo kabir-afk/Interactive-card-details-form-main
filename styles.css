@@ -28,8 +28,8 @@ body {
 }
 
 .credit-card-front {
-  width: 33.5%;
-  height: 250px;
+  width: 447px;
+  height: 245px;
   background: url(images/bg-card-front.png) no-repeat;
   display: block;
   padding: 1.5rem 2rem;
@@ -41,7 +41,7 @@ body {
   height: 95%;
   position: relative;
 }
-.credit-card-front-container p {
+.credit-card-front-container .cardNumber {
   font-size: 1.75rem;
   position: absolute;
   bottom: 0.5rem;
@@ -57,14 +57,14 @@ body {
 }
 
 .credit-card-back {
-  width: 33.5%;
-  height: 250px;
+  width: 447px;
+  height: 245px;
   background: url(images/bg-card-back.png) no-repeat;
   margin: 1.5em 11%;
 }
 .credit-card-back p {
   position: relative;
-  top: 42.5%;
+  top: 45%;
   left: 80%;
   color: hsl(0, 0%, 100%);
 }
@@ -73,7 +73,7 @@ body {
   width: 27.5%;
   position: absolute;
   top: 40%;
-  left: 60%;
+  left: 65%;
   transform: translateX(-25%) translateY(-50%);
 }
 
@@ -96,6 +96,18 @@ input:focus {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   display: none;
+}
+
+#cardNumberInput {
+  text-transform: uppercase;
+}
+
+#cardNumberInput::-moz-placeholder {
+  text-transform: lowercase;
+}
+
+#cardNumberInput::placeholder {
+  text-transform: lowercase;
 }
 
 .flex {
