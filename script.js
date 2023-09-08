@@ -19,6 +19,19 @@ function addSpacesEvery4Digits(input) {
   // Update the input field
   input.value = formattedCardNumber;
 }
+month.addEventListener('input', () => {
+  let monthValue = month.value;
+
+  // Remove leading zeros (if any)
+  monthValue = monthValue.replace(/^0+/, '');
+
+  if (monthValue < 10) {
+    monthValue = "0" + monthValue;
+  }
+
+  // Update the input field value
+  month.value = monthValue;
+});
 
 function addErrorMessages(
   errorMessage,
@@ -26,7 +39,7 @@ function addErrorMessages(
   outputElement,
   isValidFn
 ) {
-  inputElement.addEventListener("input", () => {
+  inputElement.addEventListener("input", () => {    
     const isValid = isValidFn(inputElement.value);
 
     if (!isValid) {
