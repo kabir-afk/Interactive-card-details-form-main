@@ -2,65 +2,13 @@ const cardNumber = document.querySelector(".cardNumber");
 const cardNumberInput = document.getElementById("cardNumberInput");
 const cardholderName = document.getElementById("cardholderName");
 const cardDetails1 = document.querySelector(".card-details").firstElementChild;
-const cardDetails2 = document.querySelector(".card-details").lastElementChild;
+const cardDetails2_I =
+  document.querySelector(".card-details").lastElementChild.firstElementChild;
+const cardDetails2_II =
+  document.querySelector(".card-details").lastElementChild.lastElementChild;
 const cvc = document.querySelector(".credit-card-back").firstElementChild;
 const cvcInput = document.querySelector("#CVC");
 const errorMsg = document.querySelectorAll(".error-msg");
-// const lightGrayishViolet = "hsl(270, 3%, 87%)";
-cardholderName.addEventListener("input", () => {
-  if (cardholderName.value.match(/\d/g)) {
-    errorMsg[0].style.display = "block";
-    cardholderName.style.borderColor = "red";
-  } else {
-    cardholderName.style.borderColor = "transparent";
-    errorMsg[0].style.display = "none";
-    cardDetails1.innerHTML = cardholderName.value;
-  }
-});
-cardNumberInput.addEventListener("input", () => {
-  if (/[^\d\s]/.test(cardNumberInput.value)) {
-    errorMsg[1].style.display = "block";
-    cardNumberInput.style.borderColor = "red";
-  } else {
-    errorMsg[1].style.display = "none";
-    cardNumberInput.style.borderColor = "transparent";
-    cardNumber.innerText = cardNumberInput.value;
-  }
-});
-let monthValue;
-month.addEventListener("input", () => {
-  if (month.value == "") {
-    errorMsg[2].style.display = "block";
-    month.style.borderColor = "red";
-  } else {
-    errorMsg[2].style.display = "none";
-    month.style.borderColor = "transparent";
-  }
-  monthValue = month.value;
-  if (monthValue < 10) {
-    monthValue = "0" + monthValue;
-  }
-});
-year.addEventListener("input", () => {
-    if (year.value == "") {
-        errorMsg[2].style.display = "block";
-        year.style.borderColor = "red";
-      } else {
-        errorMsg[2].style.display = "none";
-        year.style.borderColor = "transparent";
-        cardDetails2.innerHTML = monthValue + "/" + year.value;
-      }
-});
-cvcInput.addEventListener("input", () => {
-    if (cvcInput.value == "") {
-        errorMsg[3].style.display = "block";
-        cvcInput.style.borderColor = "red";
-      } else {
-        errorMsg[3].style.display = "none";
-        cvcInput.style.borderColor = "transparent";
-        cvc.innerHTML = cvcInput.value;
-      }
-});
 function addSpacesEvery4Digits(input) {
   // Remove any spaces
   const cardNumber = input.value.replace(/\s/g, "");
@@ -71,3 +19,39 @@ function addSpacesEvery4Digits(input) {
   // Update the input field
   input.value = formattedCardNumber;
 }
+
+function addErrorMessages(
+  errorMessage,
+  inputElement,
+  outputElement,
+  isValidFn
+) {
+  inputElement.addEventListener("input", () => {
+    const isValid = isValidFn(inputElement.value);
+
+    if (!isValid) {
+      errorMessage.style.display = "block";
+      inputElement.style.borderColor = "red";
+    } else {
+      errorMessage.style.display = "none";
+      inputElement.style.borderColor = "transparent";
+      outputElement.innerText = inputElement.value;
+    }
+  });
+}
+
+addErrorMessages(
+  errorMsg[0],
+  cardholderName,
+  cardDetails1,
+  (value) => !value.match(/\d/g)
+);
+addErrorMessages(
+  errorMsg[1],
+  cardNumberInput,
+  cardNumber,
+  (value) => !/[^\d\s]/.test(value)
+);
+addErrorMessages(errorMsg[2], month, cardDetails2_I, (value) => value !== "");
+addErrorMessages(errorMsg[2], year, cardDetails2_II, (value) => value !== "");
+addErrorMessages(errorMsg[3], cvcInput, cvc, (value) => value !== "");
