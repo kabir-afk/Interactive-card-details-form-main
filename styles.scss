@@ -93,14 +93,16 @@ body {
         color: $White;
     }
 }
-
-.hero-container {
+@mixin props(){
     // border: 2px solid fuchsia;
     width: 25%;
     position: absolute;
     top: 40%;
     left: 60%;
     transform: translateX(-25%) translateY(-50%);
+}
+.hero-container {
+    @include props();
     font-size: 15px;
 }
 
@@ -166,10 +168,30 @@ button {
     border-radius: 10px;
     font-size: inherit;
     cursor: pointer;
+    &:hover{
+        opacity: 0.8;
+    }
 }
 
 .error-msg {
     font-size: 16px;
     color: $Red;
     display: none;
+}
+.Completed-state{
+    @include props();
+    top: 45%;
+    @include flex(center);
+    align-items: center;
+    flex-direction: column;
+    p:nth-child(2){
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+    p:nth-child(3){
+        color: $Dark-grayish-violet;
+        font-weight: $font-weight-500;
+        line-height: 0px;
+    }
+    visibility: hidden;
 }

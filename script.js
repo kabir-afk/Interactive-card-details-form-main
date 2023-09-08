@@ -9,6 +9,10 @@ const cardDetails2_II =
 const cvc = document.querySelector(".credit-card-back").firstElementChild;
 const cvcInput = document.querySelector("#CVC");
 const errorMsg = document.querySelectorAll(".error-msg");
+const heroContainer = document.querySelector(".hero-container");
+const completedState = document.querySelector(".Completed-state");
+const formSubmit = document.querySelector("form");
+const resetBtn = document.querySelector('button[type="reset"]');
 function addSpacesEvery4Digits(input) {
   // Remove any spaces
   const cardNumber = input.value.replace(/\s/g, "");
@@ -19,11 +23,11 @@ function addSpacesEvery4Digits(input) {
   // Update the input field
   input.value = formattedCardNumber;
 }
-month.addEventListener('input', () => {
+month.addEventListener("input", () => {
   let monthValue = month.value;
 
   // Remove leading zeros (if any)
-  monthValue = monthValue.replace(/^0+/, '');
+  monthValue = monthValue.replace(/^0+/, "");
 
   if (monthValue < 10) {
     monthValue = "0" + monthValue;
@@ -39,7 +43,7 @@ function addErrorMessages(
   outputElement,
   isValidFn
 ) {
-  inputElement.addEventListener("input", () => {    
+  inputElement.addEventListener("input", () => {
     const isValid = isValidFn(inputElement.value);
 
     if (!isValid) {
@@ -68,3 +72,13 @@ addErrorMessages(
 addErrorMessages(errorMsg[2], month, cardDetails2_I, (value) => value !== "");
 addErrorMessages(errorMsg[2], year, cardDetails2_II, (value) => value !== "");
 addErrorMessages(errorMsg[3], cvcInput, cvc, (value) => value !== "");
+
+formSubmit.addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevent the form from actually submitting (to stay on the same page)
+
+  heroContainer.style.visibility = "hidden";
+  completedState.style.visibility = "visible";
+});
+resetBtn.addEventListener("click", () => {
+  location.reload();
+});
