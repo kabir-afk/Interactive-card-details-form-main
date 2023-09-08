@@ -13,6 +13,7 @@ const heroContainer = document.querySelector(".hero-container");
 const completedState = document.querySelector(".Completed-state");
 const formSubmit = document.querySelector("form");
 const resetBtn = document.querySelector('button[type="reset"]');
+const inputFields = document.querySelectorAll("input");
 function addSpacesEvery4Digits(input) {
   // Remove any spaces
   const cardNumber = input.value.replace(/\s/g, "");
@@ -74,10 +75,22 @@ addErrorMessages(errorMsg[2], year, cardDetails2_II, (value) => value !== "");
 addErrorMessages(errorMsg[3], cvcInput, cvc, (value) => value !== "");
 
 formSubmit.addEventListener("submit", (event) => {
-  event.preventDefault(); // Prevent the form from actually submitting (to stay on the same page)
+  let isTrue = true;
+  inputFields.forEach((e) => {
+    if (e.value == "") {
+      event.preventDefault(); // Prevent the form from actually submitting (to stay on the same page)
+      e.style.borderColor = "red";
+      e.nextElementSibling.innerText = "Can't be blank";
+      e.nextElementSibling.style.display = "block";
+      isTrue = false;
+    }
+  });
+  if (isTrue) {
+    event.preventDefault(); // Prevent the form from actually submitting (to stay on the same page)
 
-  heroContainer.style.visibility = "hidden";
-  completedState.style.visibility = "visible";
+    heroContainer.style.visibility = "hidden";
+    completedState.style.visibility = "visible";
+  }
 });
 resetBtn.addEventListener("click", () => {
   location.reload();
