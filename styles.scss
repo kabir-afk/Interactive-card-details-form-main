@@ -20,13 +20,9 @@ $font-family: 'Space Grotesk', sans-serif;
 *::after {
     box-sizing: border-box;
 }
+
 .uppercase {
     text-transform: uppercase;
-}
-
-@mixin flex($justify-content) {
-    display: flex;
-    justify-content: $justify-content;
 }
 
 img {
@@ -43,48 +39,85 @@ body {
     background-size: contain;
 }
 
-.credit-card-front {
-    // border: 2px solid red;
-    width: 447px;
-    height: 245px;
-    background: url(images/bg-card-front.png) no-repeat;
-    display: block;
-    padding: 1.5rem 2rem;
-    position: relative;
-    top: 15vh;
-    left: 11%;
+@mixin flex($jutsify-content, $align-items, $flex-dir) {
+    display: flex;
+    justify-content: $jutsify-content;
+    align-items: $align-items;
+    flex-direction: $flex-dir;
 }
 
-.credit-card-front-container {
-    // border: 2px solid honeydew;
-    color: $White;
-    height: 95%;
-    position: relative;
+.hero-container {
+    border: 2px solid fuchsia;
+    width: 75%;
+    // height: 50%;
+    margin: 10% auto;
+    @include flex(space-between, center, row);
+}
 
-    .cardNumber {
-        font-size: 1.75rem;
-        position: absolute;
-        bottom: 0.5rem;
-        letter-spacing: 3px;
+.credit-cards {
+    border: 2px solid firebrick;
+    width: 55%;
+    @include flex(flex-start, none, column);
+}
+
+.credit-card-front {
+    // border: 2px solid yellow
+    border-radius: 10px;
+    width: 78%;
+    height: 250px;
+    background: url(images/bg-card-front.png) no-repeat;
+    background-size: cover;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    input{
+        padding: 0;
+        // border: none;
+        color: $White;
+        background-color: transparent;
+        &::placeholder{
+            color: $White;
+        }
     }
 }
 
+.credit-card-front-container {
+    border: 2px solid honeydew;
+    color: black;
+    height: 95%;
+
+}
+
 .card-details {
-    // border: 2px solid khaki;
+    @include flex(space-between, center, row);
+    border: 2px solid khaki;
     width: 100%;
-    position: absolute;
-    bottom: 0%;
-    @include flex(space-between);
+    // >input:first-child {
+    //     width: 50%;
+    // }
+
+    div {
+        border: 2px solid brown;
+        width: 30%;
+
+        input {
+            width: 35%;
+        }
+        input:first-of-type{
+            // border: 2px solid red;
+            margin-left: 20%;
+            text-align: right;
+        }
+    }
 }
 
 .credit-card-back {
-    // border: 2px solid red;
-    position: relative;
-    top: 17vh;
-    left: 17%;
-    width: 447px;
-    height: 245px;
+    border: 2px solid red;
+    border-radius: 10px;
+    width: 78%;
+    height: 250px;
+    margin-left: auto;
     background: url(images/bg-card-back.png) no-repeat;
+    background-size: cover;
 
     p {
         position: relative;
@@ -93,15 +126,9 @@ body {
         color: $White;
     }
 }
-@mixin props(){
-    // border: 2px solid fuchsia;
-    width: 25%;
-    position: absolute;
-    top: 25%;
-    left: 52.5%;
-}
-.hero-container {
-    @include props();
+
+.hero-content {
+    border: 2px solid pink;
     font-size: 15px;
 }
 
@@ -120,7 +147,8 @@ input {
         background: linear-gradient(white, white) padding-box, $linearGradient border-box;
         border: 1px solid transparent;
     }
-    &::placeholder{
+
+    &::placeholder {
         color: $Dark-grayish-violet;
     }
 }
@@ -140,12 +168,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .flex {
     // border: 2px solid brown;
-    display: flex;
+    @include flex(center, center, row)
 }
 
 .expDate {
     // border: 2px solid aqua;
     width: 60%;
+
     input {
         margin-right: 0.5rem;
         width: 40%;
@@ -169,7 +198,8 @@ button {
     border-radius: 10px;
     font-size: inherit;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         opacity: 0.8;
     }
 }
@@ -179,20 +209,22 @@ button {
     color: $Red;
     display: none;
 }
-.Completed-state{
-    @include props();
+
+.Completed-state {
     top: 45%;
-    @include flex(center);
     align-items: center;
     flex-direction: column;
-    p:nth-child(2){
+
+    p:nth-child(2) {
         font-size: 1.5rem;
         letter-spacing: 3px;
     }
-    p:nth-child(3){
+
+    p:nth-child(3) {
         color: $Dark-grayish-violet;
         font-weight: $font-weight-500;
         line-height: 0px;
     }
+
     visibility: hidden;
 }

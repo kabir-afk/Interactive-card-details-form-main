@@ -1,5 +1,6 @@
-const cardNumber = document.querySelector(".cardNumber");
+const cardNumber = document.querySelector("#cardNumber");
 const cardNumberInput = document.getElementById("cardNumberInput");
+// console.log(cardNumber,cardNumberInput);
 const cardholderName = document.getElementById("cardholderName");
 const cardDetails1 = document.querySelector(".card-details").firstElementChild;
 const cardDetails2_I =
@@ -14,6 +15,9 @@ const completedState = document.querySelector(".Completed-state");
 const formSubmit = document.querySelector("form");
 const resetBtn = document.querySelector('button[type="reset"]');
 const inputFields = document.querySelectorAll("input");
+// cardNumberInput.addEventListener('input',()=>{
+//   cardNumber.value = cardNumberInput.value;
+// })
 function addSpacesEvery4Digits(input) {
   // Remove any spaces
   const cardNumber = input.value.replace(/\s/g, "");
@@ -37,7 +41,6 @@ month.addEventListener("input", () => {
   // Update the input field value
   month.value = monthValue;
 });
-
 function addErrorMessages(
   errorMessage,
   inputElement,
@@ -53,7 +56,7 @@ function addErrorMessages(
     } else {
       errorMessage.style.display = "none";
       inputElement.style.borderColor = "transparent";
-      outputElement.innerText = inputElement.value;
+      outputElement.value = inputElement.value;
     }
   });
 }
@@ -91,5 +94,6 @@ formSubmit.addEventListener("submit", (event) => {
   }
 });
 resetBtn.addEventListener("click", () => {
-  location.reload();
+  heroContainer.style.visibility = "visible";
+  completedState.style.visibility = "hidden";
 });
