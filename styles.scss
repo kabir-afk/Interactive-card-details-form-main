@@ -51,8 +51,8 @@ body {
     display: block;
     padding: 1.5rem 2rem;
     position: relative;
-    top: 13vh;
-    left: 12%;
+    top: 15vh;
+    left: 11%;
 }
 
 .credit-card-front-container {
@@ -80,7 +80,7 @@ body {
 .credit-card-back {
     // border: 2px solid red;
     position: relative;
-    top: 15vh;
+    top: 17vh;
     left: 17%;
     width: 447px;
     height: 245px;
@@ -97,9 +97,8 @@ body {
     // border: 2px solid fuchsia;
     width: 25%;
     position: absolute;
-    top: 40%;
-    left: 60%;
-    transform: translateX(-25%) translateY(-50%);
+    top: 25%;
+    left: 52.5%;
 }
 .hero-container {
     @include props();
@@ -120,6 +119,9 @@ input {
     &:focus {
         background: linear-gradient(white, white) padding-box, $linearGradient border-box;
         border: 1px solid transparent;
+    }
+    &::placeholder{
+        color: $Dark-grayish-violet;
     }
 }
 

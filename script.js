@@ -80,8 +80,6 @@ formSubmit.addEventListener("submit", (event) => {
     if (e.value == "") {
       event.preventDefault(); // Prevent the form from actually submitting (to stay on the same page)
       e.style.borderColor = "red";
-      e.nextElementSibling.innerText = "Can't be blank";
-      e.nextElementSibling.style.display = "block";
       isTrue = false;
     }
   });

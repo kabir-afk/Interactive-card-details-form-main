@@ -29,8 +29,8 @@ body {
   display: block;
   padding: 1.5rem 2rem;
   position: relative;
-  top: 13vh;
-  left: 12%;
+  top: 15vh;
+  left: 11%;
 }
 
 .credit-card-front-container {
@@ -55,7 +55,7 @@ body {
 
 .credit-card-back {
   position: relative;
-  top: 15vh;
+  top: 17vh;
   left: 17%;
   width: 447px;
   height: 245px;
@@ -71,9 +71,8 @@ body {
 .hero-container {
   width: 25%;
   position: absolute;
-  top: 40%;
-  left: 60%;
-  transform: translateX(-25%) translateY(-50%);
+  top: 25%;
+  left: 52.5%;
   font-size: 15px;
 }
 
@@ -91,6 +90,12 @@ input {
 input:focus {
   background: linear-gradient(white, white) padding-box, linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) padding-box border-box;
   border: 1px solid transparent;
+}
+input::-moz-placeholder {
+  color: hsl(279, 6%, 55%);
+}
+input::placeholder {
+  color: hsl(279, 6%, 55%);
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -152,9 +157,8 @@ button:hover {
 .Completed-state {
   width: 25%;
   position: absolute;
-  top: 40%;
-  left: 60%;
-  transform: translateX(-25%) translateY(-50%);
+  top: 25%;
+  left: 52.5%;
   top: 45%;
   display: flex;
   justify-content: center;
