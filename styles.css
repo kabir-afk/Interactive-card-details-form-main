@@ -22,44 +22,80 @@ body {
   background-size: contain;
 }
 
+.hero-container {
+  border: 2px solid fuchsia;
+  width: 75%;
+  margin: 10% auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.credit-cards {
+  border: 2px solid firebrick;
+  width: 55%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: none;
+  flex-direction: column;
+}
+
 .credit-card-front {
-  width: 447px;
-  height: 245px;
+  border-radius: 10px;
+  width: 78%;
+  height: 250px;
   background: url(images/bg-card-front.png) no-repeat;
-  display: block;
+  background-size: cover;
   padding: 1.5rem 2rem;
-  position: relative;
-  top: 15vh;
-  left: 11%;
+  margin-bottom: 2rem;
+}
+.credit-card-front input {
+  padding: 0;
+  color: hsl(0, 0%, 100%);
+  background-color: transparent;
+}
+.credit-card-front input::-moz-placeholder {
+  color: hsl(0, 0%, 100%);
+}
+.credit-card-front input::placeholder {
+  color: hsl(0, 0%, 100%);
 }
 
 .credit-card-front-container {
-  color: hsl(0, 0%, 100%);
+  border: 2px solid honeydew;
+  color: black;
   height: 95%;
-  position: relative;
-}
-.credit-card-front-container .cardNumber {
-  font-size: 1.75rem;
-  position: absolute;
-  bottom: 0.5rem;
-  letter-spacing: 3px;
 }
 
 .card-details {
-  width: 100%;
-  position: absolute;
-  bottom: 0%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border: 2px solid khaki;
+  width: 100%;
+}
+.card-details div {
+  border: 2px solid brown;
+  width: 30%;
+}
+.card-details div input {
+  width: 35%;
+}
+.card-details div input:first-of-type {
+  margin-left: 20%;
+  text-align: right;
 }
 
 .credit-card-back {
-  position: relative;
-  top: 17vh;
-  left: 17%;
-  width: 447px;
-  height: 245px;
+  border: 2px solid red;
+  border-radius: 10px;
+  width: 78%;
+  height: 250px;
+  margin-left: auto;
   background: url(images/bg-card-back.png) no-repeat;
+  background-size: cover;
 }
 .credit-card-back p {
   position: relative;
@@ -68,11 +104,8 @@ body {
   color: hsl(0, 0%, 100%);
 }
 
-.hero-container {
-  width: 25%;
-  position: absolute;
-  top: 25%;
-  left: 52.5%;
+.hero-content {
+  border: 2px solid pink;
   font-size: 15px;
 }
 
@@ -117,6 +150,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .flex {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 .expDate {
@@ -155,13 +191,7 @@ button:hover {
 }
 
 .Completed-state {
-  width: 25%;
-  position: absolute;
-  top: 25%;
-  left: 52.5%;
   top: 45%;
-  display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   visibility: hidden;
