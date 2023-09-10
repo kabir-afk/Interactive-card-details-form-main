@@ -118,6 +118,7 @@ body {
         margin-bottom: -2.3em;
         z-index: 1;
         top: -4.3em;
+
     }
 
     &::before {
@@ -129,7 +130,15 @@ body {
         height: 90%;
         background-color: $Light-grayish-violet;
         z-index: -1;
+
         filter: blur(20px);
+        @include mobile() {
+            top: 85%;
+            left: 0%;
+            width: 100%;
+            height: 20%;
+            background-color: $Light-grayish-violet;
+        }
     }
 }
 
@@ -232,6 +241,10 @@ body {
         background-color: $Light-grayish-violet;
         z-index: -1;
         filter: blur(20px);
+
+        @include mobile() {
+            background-color: transparent;
+        }
     }
 }
 
