@@ -30,24 +30,35 @@ Users should be able to:
 
 ### Screenshot
 
+![desktop-preview](https://github.com/kabir-afk/Interactive-card-details-form-main/assets/123084434/27e06f6f-bde1-45e8-a2ec-9c44ca8ef724)
+
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live](https://kabir-afk.github.io/Interactive-card-details-form-main/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
-- CSS Grid
+- SCSS
+- Javascript
 - Desktop-first workflow
 
 ### What I learned
 - background-clip property and how we can use it to produce gradient borders
+- JS Regex
+- making sure our input values remain within min-max range when ```-webkit-inner/outer-spin-button``` are set to ```display:none``` using ```oninput = validity.valid||(value='')``` , like idk how exactly it works and I alos know that it is part of something bigger but . . . counts as something I learned
+- Using ```@mixin``` efficiently in SASS
+- preventing default form submission using ```event.preventDefault()```
 ### Useful resources
-[CSS-gradient-border-vid](https://www.youtube.com/watch?v=RM3-IMRIEB4)
+- Here's the link : [gradient-border-vid](https://www.youtube.com/watch?v=RM3-IMRIEB4)
+- I'd say ChatGPT 🤖 as well since I never worked with Regex before and it was quite the helper
+
+### Continued development
+
+Prolly working on Regex and form validation since there is a lot of room for improvement I guess . . . as well as efficient use of SASS , I'll also start using GSAP in furhter projects to come 
 
 ## Author
 
