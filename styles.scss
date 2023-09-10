@@ -15,6 +15,31 @@ $Very-dark-violet: hsl(278, 68%, 11%);
 $font-weight-500 : 500;
 $font-family: 'Space Grotesk', sans-serif;
 
+@mixin flex($jutsify-content, $align-items, $flex-dir) {
+    display: flex;
+    justify-content: $jutsify-content;
+    align-items: $align-items;
+    flex-direction: $flex-dir;
+}
+
+@mixin cardInputStyles {
+    padding: 0;
+    border: none;
+    color: $White;
+    background-color: transparent;
+    letter-spacing: 3px;
+
+    &::placeholder {
+        color: $White;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width:600px) {
+        @content;
+    }
+}
+
 *,
 *::before,
 *::after {
@@ -25,6 +50,16 @@ $font-family: 'Space Grotesk', sans-serif;
     text-transform: uppercase;
 }
 
+.letter-spacing-2px {
+    letter-spacing: 2px;
+}
+
+html {
+    @include mobile() {
+        overflow-x: hidden;
+    }
+}
+
 img {
     max-width: 100%;
 }
@@ -33,103 +68,152 @@ body {
     margin: 0%;
     padding: 0%;
     height: 100vh;
-    font-size: 1.125rem;
     font-family: $font-family;
     background: url(images/bg-main-desktop.png) no-repeat;
-    background-size: contain;
-}
 
-@mixin flex($jutsify-content, $align-items, $flex-dir) {
-    display: flex;
-    justify-content: $jutsify-content;
-    align-items: $align-items;
-    flex-direction: $flex-dir;
+    @include mobile() {
+        background: url(images/bg-main-mobile.png) no-repeat;
+        background-size: 100vw 38%;
+    }
 }
 
 .hero-container {
-    border: 2px solid fuchsia;
+    // border: 2px solid fuchsia;
     width: 75%;
-    // height: 50%;
-    margin: 10% auto;
+    margin: 5% auto;
+    transform: translateX(-7px);
     @include flex(space-between, center, row);
+
+    @include mobile() {
+        margin: 11vh 50%;
+        transform: translateX(-50%);
+        width: 87.5%;
+        flex-direction: column;
+    }
 }
 
 .credit-cards {
-    border: 2px solid firebrick;
-    width: 55%;
+    // border: 2px solid firebrick;
+    width: 54%;
     @include flex(flex-start, none, column);
+    @include mobile(){
+        width: 100%;
+        flex-direction: column-reverse;   
+    }
 }
 
 .credit-card-front {
-    // border: 2px solid yellow
+    // border: 2px solid yellow;
+    width: 85%;
     border-radius: 10px;
-    width: 78%;
-    height: 250px;
-    background: url(images/bg-card-front.png) no-repeat;
-    background-size: cover;
-    padding: 1.5rem 2rem;
     margin-bottom: 2rem;
-    input{
-        padding: 0;
-        // border: none;
-        color: $White;
-        background-color: transparent;
-        &::placeholder{
-            color: $White;
-        }
+    position: relative;
+
+    input {
+        @include cardInputStyles();
+    }
+    @include mobile(){
+        margin-bottom: -2.3em;
+        z-index: 1;
+        top: -4.3em;
     }
 }
 
 .credit-card-front-container {
-    border: 2px solid honeydew;
-    color: black;
-    height: 95%;
+    // border: 2px solid black;
+    height: 75%;
+    width: 87.5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 
+    >input {
+        // border: 2px solid hotpink;
+        position: absolute;
+        left: 0%;
+        top: 77.5%;
+        transform: translateY(-100%);
+        font-size: 1.5rem;
+
+        @media screen and (max-width:1084px) {
+            font-size: 1.2rem;
+        }
+        @include mobile(){
+            font-size: 15px;
+        }
+    }
+    img{
+        // border: 2px solid yellow;
+        width: 25%;
+    }
 }
 
 .card-details {
+    // border: 2px solid khaki;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
     @include flex(space-between, center, row);
-    border: 2px solid khaki;
     width: 100%;
-    // >input:first-child {
-    //     width: 50%;
-    // }
+
+    input {
+        @media screen and (max-width:1084px) {
+            font-size: 15px;
+        }
+        @include mobile(){
+            font-size: 13px;
+        }
+    }
 
     div {
-        border: 2px solid brown;
+        // border: 2px solid brown;
         width: 30%;
+        text-align: right;
 
         input {
             width: 35%;
         }
-        input:first-of-type{
+
+        input:first-of-type {
             // border: 2px solid red;
-            margin-left: 20%;
             text-align: right;
         }
     }
 }
 
 .credit-card-back {
-    border: 2px solid red;
+    // border: 2px solid red;
+    width: 85%;
     border-radius: 10px;
-    width: 78%;
-    height: 250px;
     margin-left: auto;
-    background: url(images/bg-card-back.png) no-repeat;
-    background-size: cover;
+    position: relative;
 
-    p {
-        position: relative;
-        top: 45%;
-        left: 80%;
-        color: $White;
+    input {
+        @include cardInputStyles();
+        width: 80%;
+        height: 15%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: right;
+        padding-right: 0.5em;
+        @media screen and (max-width:1084px) {
+            font-size: 15px;
+        }
     }
 }
 
 .hero-content {
-    border: 2px solid pink;
+    // border: 2px solid pink;
     font-size: 15px;
+    width: 40%;
+    position: relative;
+
+    @include mobile() {
+        width: 100%;
+    }
 }
 
 input {
@@ -168,7 +252,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .flex {
     // border: 2px solid brown;
-    @include flex(center, center, row)
+    @include flex(center, flex-end, row)
 }
 
 .expDate {
@@ -211,9 +295,11 @@ button {
 }
 
 .Completed-state {
-    top: 45%;
-    align-items: center;
-    flex-direction: column;
+    // border: 2px solid pink;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    @include flex(center, center, column);
 
     p:nth-child(2) {
         font-size: 1.5rem;
@@ -221,6 +307,7 @@ button {
     }
 
     p:nth-child(3) {
+        font-size: 1.125rem;
         color: $Dark-grayish-violet;
         font-weight: $font-weight-500;
         line-height: 0px;
