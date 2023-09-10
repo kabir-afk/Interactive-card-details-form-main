@@ -8,6 +8,10 @@
   text-transform: uppercase;
 }
 
+.letter-spacing-2px {
+  letter-spacing: 2px;
+}
+
 html {
   overflow: hidden;
 }
@@ -25,7 +29,6 @@ body {
 }
 
 .hero-container {
-  border: 2px solid fuchsia;
   width: 75%;
   margin: 3em auto;
   transform: translateX(-7px);
@@ -125,7 +128,6 @@ body {
 }
 
 .hero-content {
-  border: 2px solid pink;
   font-size: 15px;
   width: 40%;
   position: relative;
@@ -213,7 +215,6 @@ button:hover {
 }
 
 .Completed-state {
-  border: 2px solid pink;
   position: absolute;
   top: 0;
   width: 100%;

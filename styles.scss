@@ -43,6 +43,9 @@ $font-family: 'Space Grotesk', sans-serif;
 .uppercase {
     text-transform: uppercase;
 }
+.letter-spacing-2px{
+    letter-spacing: 2px;
+}
 
 html {
     overflow: hidden;
@@ -62,7 +65,7 @@ body {
 
 
 .hero-container {
-    border: 2px solid fuchsia;
+    // border: 2px solid fuchsia;
     width: 75%;
     // height: 50%;
     margin:3em auto;
@@ -147,7 +150,7 @@ body {
 }
 
 .hero-content {
-    border: 2px solid pink;
+    // border: 2px solid pink;
     font-size: 15px;
     width: 40%;
     position: relative;
@@ -232,7 +235,7 @@ button {
 }
 
 .Completed-state {
-    border: 2px solid pink;
+    // border: 2px solid pink;
     position: absolute;
     top: 0;
     width: 100%;

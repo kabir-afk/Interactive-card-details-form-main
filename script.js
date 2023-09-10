@@ -1,23 +1,21 @@
 const cardNumber = document.querySelector("#cardNumber");
 const cardNumberInput = document.getElementById("cardNumberInput");
-// console.log(cardNumber,cardNumberInput);
 const cardholderName = document.getElementById("cardholderName");
 const cardDetails1 = document.querySelector(".card-details").firstElementChild;
 const cardDetails2_I =
   document.querySelector(".card-details").lastElementChild.firstElementChild;
 const cardDetails2_II =
   document.querySelector(".card-details").lastElementChild.lastElementChild;
-const cvc = document.querySelector(".credit-card-back").firstElementChild;
+const cvc = document.querySelector(".credit-card-back").lastElementChild;
 const cvcInput = document.querySelector("#CVC");
 const errorMsg = document.querySelectorAll(".error-msg");
 const heroContainer = document.querySelector(".hero-container");
 const completedState = document.querySelector(".Completed-state");
 const formSubmit = document.querySelector("form");
 const resetBtn = document.querySelector('button[type="reset"]');
-const inputFields = document.querySelectorAll("input");
-// cardNumberInput.addEventListener('input',()=>{
-//   cardNumber.value = cardNumberInput.value;
-// })
+const heroContent = document.querySelector('.hero-content');
+const inputFields = heroContent.querySelectorAll("input");
+
 function addSpacesEvery4Digits(input) {
   // Remove any spaces
   const cardNumber = input.value.replace(/\s/g, "");
@@ -89,11 +87,11 @@ formSubmit.addEventListener("submit", (event) => {
   if (isTrue) {
     event.preventDefault(); // Prevent the form from actually submitting (to stay on the same page)
 
-    heroContainer.style.visibility = "hidden";
+    heroContent.style.visibility = "hidden";
     completedState.style.visibility = "visible";
   }
 });
 resetBtn.addEventListener("click", () => {
-  heroContainer.style.visibility = "visible";
+  heroContent.style.visibility = "visible";
   completedState.style.visibility = "hidden";
 });
