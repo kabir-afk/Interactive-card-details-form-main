@@ -12,8 +12,10 @@
   letter-spacing: 2px;
 }
 
-html {
-  overflow: hidden;
+@media screen and (max-width: 600px) {
+  html {
+    overflow-x: hidden;
+  }
 }
 
 img {
@@ -27,15 +29,29 @@ body {
   font-family: "Space Grotesk", sans-serif;
   background: url(images/bg-main-desktop.png) no-repeat;
 }
+@media screen and (max-width: 600px) {
+  body {
+    background: url(images/bg-main-mobile.png) no-repeat;
+    background-size: 100vw 38%;
+  }
+}
 
 .hero-container {
   width: 75%;
-  margin: 3em auto;
+  margin: 5% auto;
   transform: translateX(-7px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+}
+@media screen and (max-width: 600px) {
+  .hero-container {
+    margin: 11vh 50%;
+    transform: translateX(-50%);
+    width: 87.5%;
+    flex-direction: column;
+  }
 }
 
 .credit-cards {
@@ -45,10 +61,15 @@ body {
   align-items: none;
   flex-direction: column;
 }
+@media screen and (max-width: 600px) {
+  .credit-cards {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+}
 
 .credit-card-front {
-  width: -moz-max-content;
-  width: max-content;
+  width: 85%;
   border-radius: 10px;
   margin-bottom: 2rem;
   position: relative;
@@ -66,6 +87,13 @@ body {
 .credit-card-front input::placeholder {
   color: hsl(0, 0%, 100%);
 }
+@media screen and (max-width: 600px) {
+  .credit-card-front {
+    margin-bottom: -2.3em;
+    z-index: 1;
+    top: -4.3em;
+  }
+}
 
 .credit-card-front-container {
   height: 75%;
@@ -78,8 +106,22 @@ body {
 .credit-card-front-container > input {
   position: absolute;
   left: 0%;
-  top: 60%;
+  top: 77.5%;
+  transform: translateY(-100%);
   font-size: 1.5rem;
+}
+@media screen and (max-width: 1084px) {
+  .credit-card-front-container > input {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .credit-card-front-container > input {
+    font-size: 15px;
+  }
+}
+.credit-card-front-container img {
+  width: 25%;
 }
 
 .card-details {
@@ -92,20 +134,29 @@ body {
   flex-direction: row;
   width: 100%;
 }
+@media screen and (max-width: 1084px) {
+  .card-details input {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card-details input {
+    font-size: 13px;
+  }
+}
 .card-details div {
   width: 30%;
+  text-align: right;
 }
 .card-details div input {
   width: 35%;
 }
 .card-details div input:first-of-type {
-  margin-left: 20%;
   text-align: right;
 }
 
 .credit-card-back {
-  width: -moz-max-content;
-  width: max-content;
+  width: 85%;
   border-radius: 10px;
   margin-left: auto;
   position: relative;
@@ -116,9 +167,14 @@ body {
   color: hsl(0, 0%, 100%);
   background-color: transparent;
   letter-spacing: 3px;
+  width: 80%;
+  height: 15%;
   position: absolute;
-  top: 45%;
-  left: 80%;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: right;
+  padding-right: 0.5em;
 }
 .credit-card-back input::-moz-placeholder {
   color: hsl(0, 0%, 100%);
@@ -126,11 +182,21 @@ body {
 .credit-card-back input::placeholder {
   color: hsl(0, 0%, 100%);
 }
+@media screen and (max-width: 1084px) {
+  .credit-card-back input {
+    font-size: 15px;
+  }
+}
 
 .hero-content {
   font-size: 15px;
   width: 40%;
   position: relative;
+}
+@media screen and (max-width: 600px) {
+  .hero-content {
+    width: 100%;
+  }
 }
 
 input {
@@ -175,7 +241,7 @@ input[type=number]::-webkit-outer-spin-button {
 .flex {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: row;
 }
 
@@ -229,6 +295,7 @@ button:hover {
   letter-spacing: 3px;
 }
 .Completed-state p:nth-child(3) {
+  font-size: 1.125rem;
   color: hsl(279, 6%, 55%);
   font-weight: 500;
   line-height: 0px;
