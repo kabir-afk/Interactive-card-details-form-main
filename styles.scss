@@ -96,9 +96,10 @@ body {
     // border: 2px solid firebrick;
     width: 54%;
     @include flex(flex-start, none, column);
-    @include mobile(){
+
+    @include mobile() {
         width: 100%;
-        flex-direction: column-reverse;   
+        flex-direction: column-reverse;
     }
 }
 
@@ -112,10 +113,23 @@ body {
     input {
         @include cardInputStyles();
     }
-    @include mobile(){
+
+    @include mobile() {
         margin-bottom: -2.3em;
         z-index: 1;
         top: -4.3em;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 82.5%;
+        width: 20%;
+        height: 90%;
+        background-color: $Light-grayish-violet;
+        z-index: -1;
+        filter: blur(20px);
     }
 }
 
@@ -139,11 +153,13 @@ body {
         @media screen and (max-width:1084px) {
             font-size: 1.2rem;
         }
-        @include mobile(){
+
+        @include mobile() {
             font-size: 15px;
         }
     }
-    img{
+
+    img {
         // border: 2px solid yellow;
         width: 25%;
     }
@@ -161,7 +177,8 @@ body {
         @media screen and (max-width:1084px) {
             font-size: 15px;
         }
-        @include mobile(){
+
+        @include mobile() {
             font-size: 13px;
         }
     }
@@ -199,9 +216,22 @@ body {
         transform: translateX(-50%);
         text-align: right;
         padding-right: 0.5em;
+
         @media screen and (max-width:1084px) {
             font-size: 15px;
         }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 65%;
+        width: 35%;
+        height: 90%;
+        background-color: $Light-grayish-violet;
+        z-index: -1;
+        filter: blur(20px);
     }
 }
 

@@ -94,6 +94,17 @@ body {
     top: -4.3em;
   }
 }
+.credit-card-front::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 82.5%;
+  width: 20%;
+  height: 90%;
+  background-color: hsl(270, 3%, 87%);
+  z-index: -1;
+  filter: blur(20px);
+}
 
 .credit-card-front-container {
   height: 75%;
@@ -186,6 +197,17 @@ body {
   .credit-card-back input {
     font-size: 15px;
   }
+}
+.credit-card-back::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 65%;
+  width: 35%;
+  height: 90%;
+  background-color: hsl(270, 3%, 87%);
+  z-index: -1;
+  filter: blur(20px);
 }
 
 .hero-content {
